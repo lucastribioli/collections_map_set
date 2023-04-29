@@ -1,7 +1,28 @@
 fun main(args: Array<String>) {
-    println("Hello World!")
+    val bancoDeNomes: BancoDeNomes = BancoDeNomes()
+    bancoDeNomes.salva("Lucas")
+    println(bancoDeNomes.nomes)
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+
+
+}
+
+class BancoDeNomes {
+    val nomes: Collection<String> get() = dados
+
+    fun salva(nome: String){
+        dados.add(nome)
+    }
+
+    companion object {
+        private val dados = mutableListOf<String>()
+    }
+}
+fun testaColecao(){
+    val nomes: Collection<String> = mutableListOf(
+        "Alex",
+        "Lucas",
+        "João",
+        "Maria"
+    )
 }
